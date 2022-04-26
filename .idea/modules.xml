@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Empty_flask.iml" filepath="$PROJECT_DIR$/.idea/Empty_flask.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/lost_ark_characters.iml" filepath="$PROJECT_DIR$/.idea/lost_ark_characters.iml" />
     </modules>
   </component>
 </project>
