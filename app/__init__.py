@@ -3,11 +3,13 @@ from flask_bootstrap import Bootstrap
 from config import config
 
 from . import main
+from . import auth
+from . import character
 
 bootstrap = Bootstrap()
 
 
-def create_app(config_name = "default"):
+def create_app(config_name = "testing"):
     app = Flask(__name__)
 
     # import config settings
@@ -23,5 +25,10 @@ def create_app(config_name = "default"):
     # register blueprints
     from .main import main
     app.register_blueprint(main)
+
+    from .auth import auth
+    app.register_blueprint(auth)
+
+    #from .character import character
 
     return app
