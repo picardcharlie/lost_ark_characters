@@ -8,11 +8,11 @@
 
 from app import create_app
 from flask_migrate import Migrate
-from app.models import db, users, characters
+from app.models import db, User, Character
 
 app = create_app('testing')
 migrate = Migrate(app, db)
 
 @app.shell_context_processor
 def make_shell_context():
-    return dict() #db, user, post, etc
+    return dict(db = db, User = User, Character = Character) #db, user, post, etc

@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
 
-</body>
-</html>
+{% block title %} LA Character Calender {% endblock %}
+
+{% block page_content %}
+<h1>Welcome to here</h1>
+<a href="/signup">Sign up</a>
+<p>Login here</p>
+{{ wtf.quick_form(signin_form) }}
+{% endblock %}

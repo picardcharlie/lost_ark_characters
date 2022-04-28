@@ -1,7 +1,10 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request
+from app.forms import SignUp, SignIn
 
 main = Blueprint('main', __name__)
 
-@main.route('/')
+@main.route('/', methods = ['GET', 'POST'])
 def index():
-    return render_template('index.html')
+    signin_form = SignIn()
+    return render_template('index.html', signin_form = signin_form)
+

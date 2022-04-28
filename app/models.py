@@ -7,7 +7,7 @@ class User(db.Model):
     uid = db.Column(db.Integer, primary_key = True, autoincrement = True)
     username = db.Column(db.String(50), unique = True, index = True)
     password_hash = db.Column(db.String(128))
-    user_character = db.Relationship("characters", backref = "user", lazy = "dynamic")
+    user_character = db.relationship("Character", backref = "user", lazy = "dynamic")
 
     @property
     def password(self):
@@ -25,7 +25,7 @@ class User(db.Model):
         self.password_hash = password_hash
 
 
-class Characters(db.Model):
+class Character(db.Model):
     __tablename__ = "characters"
     charid = db.Column(db.Integer, primary_key = True, autoincrement = True)
     character_name = db.Column(db.String(25))
